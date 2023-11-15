@@ -838,6 +838,8 @@ module ActiveSupport
           if @value.is_a?(String)
             @value = @value.dup
           else
+            puts "@value"
+            puts @value
             @value = Marshal.load(Marshal.dump(@value))
           end
         end
