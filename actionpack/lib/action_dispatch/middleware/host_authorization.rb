@@ -112,6 +112,8 @@ module ActionDispatch
           return unless logger
 
           logger.error("[#{self.class.name}] Blocked hosts: #{request.env["action_dispatch.blocked_hosts"].join(", ")}")
+          logger.error("Request path: #{request.path}")
+          logger.error("Request inspect: #{request.inspect}")
         end
 
         def available_logger(request)
